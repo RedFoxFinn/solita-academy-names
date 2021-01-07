@@ -10,7 +10,7 @@ I used javascript and following libraries to complete this assignment:
 - React
 - Axios
 
-### dev-academy-2021 exercise - Name Application [Original assignment from [Solita GitHub](https://github.com/solita/dev-academy-2020/)]
+### dev-academy-2021 exercise - Name Application  [Original assignment from [Solita GitHub](https://github.com/solita/dev-academy-2020/)]
 
 Your task is to implement a name application. The application should have an user interface. The user interface can be either a web application or an api. (It can even contain both if you have enough time and enthusiasm.) 
 
