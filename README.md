@@ -10,6 +10,9 @@ I used javascript and following libraries to complete this assignment:
 - [React](https://reactjs.org)
 - [Axios](https://github.com/axios/axios)
 
+Styling is achieved by using inline styles provided by self-made styling tool.
+Fetching state messages use self-made enum-like definitions that are built with Object.freeze().
+
 ### dev-academy-2021 exercise - Name Application 
 
 [Original assignment from [Solita GitHub](https://github.com/solita/dev-academy-2020/)]

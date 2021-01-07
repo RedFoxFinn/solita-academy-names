@@ -1,15 +1,13 @@
 
 import React, {useState} from 'react';
 
-import fetchService from './tools/fetchService';
-
 import Header from './components/Header';
-import List from './components/List';
+import Viewer from './components/Viewer';
 
 const App = () => {
   return <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', alignContent: 'center'}}>
     <Header/>
-    <List/>
+    <Viewer/>
   </div>;
 };
 
