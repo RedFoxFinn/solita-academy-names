@@ -6,6 +6,13 @@ const fetch = Object.freeze({
     STOPPED: 'stopped'
 });
 
+const sorting = Object.freeze({
+    AtoZ: 'AtoZ',
+    ZtoA: 'ZtoA',
+    ZEROtoNINE: '0to9',
+    NINEtoZERO: '9to0'
+});
+
 export default {
-    fetch
+    fetch, sorting
 };

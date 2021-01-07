@@ -13,7 +13,7 @@ const Viewer = () => {
     const onFetch = () => {
         setFetchState(enums.fetch.RUNNING);
         try {
-            fetchService.names().then((response) => setNames(response.data));
+            fetchService.names().then((response) => setNames(response.data.names));
             setFetchState(enums.fetch.DONE);
         } catch (err) {
             setFetchState(enums.fetch.ERROR);
@@ -29,7 +29,7 @@ const Viewer = () => {
         <Fetch/>
         {names == null && fetchState == enums.fetch.STOPPED && <status.Nope/>}
         {names == null && fetchState == enums.fetch.ERROR && <status.Error/>}
-        {fetchState == enums.fetch.DONE && names != null && <List/>}
+        {fetchState == enums.fetch.DONE && names && names != null && <List names={names}/>}
         {fetchState == enums.fetch.RUNNING && <status.Running/>}
     </div>;
 };
