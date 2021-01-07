@@ -7,8 +7,8 @@ Programming assignment for applying to Solita Dev Academy 2021.
 
 I used javascript and following libraries to complete this assignment:
 
-- React
-- Axios
+- [React](https://reactjs.org)
+- [Axios](https://github.com/axios/axios)
 
 ### dev-academy-2021 exercise - Name Application 
 
