@@ -15,4 +15,8 @@ const Running = () => <div style={{}}>
     <p style={styles.running()}>Fetching the names . . .</p>
 </div>;
 
-export default {Nope, Error, Running};
+const NoResults = (props) => <div style ={{}}>
+    <p style={styles.failure()} >With name '{props.name}' we couldn't find any results</p>
+</div>;
+
+export default {Nope, Error, Running, NoResults};

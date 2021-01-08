@@ -49,6 +49,8 @@ const Viewer = () => {
         </div>
     </div>;
 
+    const Search = () => {};
+
     return <div style={styles.platform()}>
         <Fetch/>
         {names == null && fetchState == enums.fetch.STOPPED && <status.Nope/>}
