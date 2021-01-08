@@ -10,9 +10,20 @@ I used javascript and following libraries to complete this assignment:
 - [React](https://reactjs.org)
 - [Axios](https://github.com/axios/axios)
 
-Styling is achieved by using inline styles provided by self-made styling tool.
+Styling is achieved by using inline styles provided by self-made and simple styling tool.
 
 Fetching state messages use self-made enum-like definitions that are built with Object.freeze().
+
+Fetching json first from Solita github, assignment repository.
+
+Sorting functionality displayed after the json gets fetched. Features sorting by name (ascending, descending) and amount (also ascending and descending).
+
+Status messages feature current sorting method, total count of names on json, total amount counted from name/amount -pairs.
+
+Search functionality displayed after the json gets fetched. Features search field, search button and search resetting button.
+
+List is displayed after the json gets fetched. By default it shows name/amount -pairs sorted by name, ascending. When search is used, there will be names that include search term (only some letters or complete name). If no results appear, there will be shown status message with reflecting content.
+
 
 ### dev-academy-2021 exercise - Name Application 
 
