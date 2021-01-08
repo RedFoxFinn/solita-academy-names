@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](///compare/v0.1.5...v0.2.0) (2021-01-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **list:** list completed
+
+### Features
+
+* **list:** finalized & working sorting of name/amount -pairs with sorting mode display 3976c53
+
 ### [0.1.5](///compare/v0.1.4...v0.1.5) (2021-01-08)
 
 
