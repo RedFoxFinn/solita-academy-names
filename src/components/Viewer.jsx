@@ -9,6 +9,7 @@ import status from './Status';
 const Viewer = () => {
     const [fetchState, setFetchState] = useState(enums.fetch.STOPPED);
     const [names, setNames] = useState(null);
+    const [sorting, setSorting] = useState(enums.sorting.AtoZ);
 
     const onFetch = () => {
         setFetchState(enums.fetch.RUNNING);
@@ -22,15 +23,28 @@ const Viewer = () => {
 
     const Fetch = () => <div style={styles.inline()}>
         <p style={styles.text()}>Fetch names?</p>
-        <button onClick={() => onFetch()}>please do</button>
+        <button style={styles.fetchingButton()} onClick={() => onFetch()} >please do</button>
+    </div>;
+
+    const CurrentSorting = () => <div style={styles.inline()}>
+        <p style={styles.success()}>Current sorting: <strong>{sorting}</strong></p>
+    </div>;
+
+    const Sort = () => <div style={styles.platform()}>
+        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AtoZ)}>Name, &#8593;</button>
+        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.ZtoA)}>Name, &#8595;</button>
+        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_ASC)}>Amount, &#8593;</button>
+        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_DES)}>Amount, &#8595;</button>
+        <CurrentSorting/>
     </div>;
 
     return <div style={styles.platform()}>
         <Fetch/>
         {names == null && fetchState == enums.fetch.STOPPED && <status.Nope/>}
         {names == null && fetchState == enums.fetch.ERROR && <status.Error/>}
-        {fetchState == enums.fetch.DONE && names && names != null && <List names={names} />}
         {fetchState == enums.fetch.RUNNING && <status.Running/>}
+        {fetchState == enums.fetch.DONE && names && names != null && <Sort/>}
+        {fetchState == enums.fetch.DONE && names && names != null && <List names={names} sorting={sorting}/>}
     </div>;
 };
 

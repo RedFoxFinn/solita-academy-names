@@ -7,6 +7,10 @@ const inline = () => {
     return {display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center'};
 };
 
+const person = () => {
+    return {display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', height: '4em'};
+};
+
 const appName = () => {
     return {fontSize: '3em', color: 'black'};
 };
@@ -39,6 +43,10 @@ const sortingButton = () => {
     return {width: '12em', height: '1,5em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
 };
 
+const fetchingButton = () => {
+    return {marginLeft: '1em', width: '6em', height: '1,5em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
+};
+
 export default {
-    appName, authorName, failure, inline, platform, running, selection, sortingButton, success, text
+    appName, authorName, failure, fetchingButton, inline, platform, person, running, selection, sortingButton, success, text
 };
