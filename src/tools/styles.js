@@ -20,17 +20,25 @@ const text = () => {
 };
 
 const success = () => {
-    return {fontSize: '1,5em', color: 'green'};
+    return {fontSize: '1,5em', color: 'forestgreen'};
 };
 
 const failure = () => {
-    return {fontSize: '1,5em', color: 'red'};
+    return {fontSize: '1,5em', color: '#dc4233'};
 };
 
 const running = () => {
-    return {fontSize: '1,5em', color: 'blue'};
+    return {fontSize: '1,5em', color: 'darkblue'};
+};
+
+const selection = () => {
+    return {fontSize: '1,5em', color: '#dc4233'}
+};
+
+const sortingButton = () => {
+    return {width: '12em', height: '1,5em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
 };
 
 export default {
-    appName, authorName, failure, inline, platform, running, success, text
+    appName, authorName, failure, inline, platform, running, selection, sortingButton, success, text
 };

@@ -29,7 +29,7 @@ const Viewer = () => {
         <Fetch/>
         {names == null && fetchState == enums.fetch.STOPPED && <status.Nope/>}
         {names == null && fetchState == enums.fetch.ERROR && <status.Error/>}
-        {fetchState == enums.fetch.DONE && names && names != null && <List names={names}/>}
+        {fetchState == enums.fetch.DONE && names && names != null && <List names={names} />}
         {fetchState == enums.fetch.RUNNING && <status.Running/>}
     </div>;
 };

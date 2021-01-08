@@ -7,10 +7,10 @@ const fetch = Object.freeze({
 });
 
 const sorting = Object.freeze({
-    AtoZ: 'AtoZ',
-    ZtoA: 'ZtoA',
-    ZEROtoNINE: '0to9',
-    NINEtoZERO: '9to0'
+    AtoZ: 'by name, ascending',
+    ZtoA: 'by name, descending',
+    AMOUNT_ASC: 'by amount, ascending',
+    AMOUNT_DES: 'by amount, descending'
 });
 
 export default {
