@@ -33,23 +33,21 @@ const Viewer = () => {
     const Sort = () => <div style={styles.inline()} >
         <div style={styles.sortings()} >
             <div style={styles.inline()} >
-                <p style={styles.textL()} >Sort by</p>
-                <p style={styles.authorName()} >Name</p>
+                <p style={styles.textL()} >Sort</p>
+                <p style={styles.authorName()} >by name</p>
             </div>
             <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AtoZ)}>Name, &#8593;</button>
             <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.ZtoA)}>Name, &#8595;</button>
         </div>
         <div style={styles.sortings()} >
             <div style={styles.inline()} >
-                <p style={styles.textL()} >Sort by</p>
-                <p style={styles.authorName()} >Amount</p>
+                <p style={styles.textL()} >Sort</p>
+                <p style={styles.authorName()} >by amount</p>
             </div>
             <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_ASC)}>Amount, &#8593;</button>
             <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_DES)}>Amount, &#8595;</button>
         </div>
     </div>;
-
-    const Search = () => {};
 
     return <div style={styles.platform()}>
         <Fetch/>

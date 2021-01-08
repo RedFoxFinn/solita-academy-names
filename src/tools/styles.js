@@ -52,13 +52,22 @@ const selection = () => {
 };
 
 const sortingButton = () => {
-    return {width: '12em', height: '1,5em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
+    return {marginBottom: '0.5em', width: '12em', height: '2em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
 };
 
 const fetchingButton = () => {
-    return {marginLeft: '1em', width: '6em', height: '1,5em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
+    return {marginLeft: '1em', width: '6em', height: '2em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
+};
+
+const searchButtons = () => {
+    return {marginLeft: '1em', width: '8em', height: '2em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
+};
+
+const searchField = () => {
+    return {width: '12em', height: '1em', outline: '1px solid #dc4233', border: '1px solid transparent', background: 'transparent'};
 };
 
 export default {
-    appName, authorName, failure, fetchingButton, inline, platform, person, personName, running, selection, sortingButton, sortings, success, text, textL
+    appName, authorName, failure, fetchingButton, inline, platform, person, personName, 
+    running, searchButtons, searchField, selection, sortingButton, sortings, success, text, textL
 };
