@@ -30,12 +30,23 @@ const Viewer = () => {
         <p style={styles.success()}>Current sorting: <strong>{sorting}</strong></p>
     </div>;
 
-    const Sort = () => <div style={styles.platform()}>
-        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AtoZ)}>Name, &#8593;</button>
-        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.ZtoA)}>Name, &#8595;</button>
-        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_ASC)}>Amount, &#8593;</button>
-        <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_DES)}>Amount, &#8595;</button>
-        <CurrentSorting/>
+    const Sort = () => <div style={styles.inline()} >
+        <div style={styles.sortings()} >
+            <div style={styles.inline()} >
+                <p style={styles.textL()} >Sort by</p>
+                <p style={styles.authorName()} >Name</p>
+            </div>
+            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AtoZ)}>Name, &#8593;</button>
+            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.ZtoA)}>Name, &#8595;</button>
+        </div>
+        <div style={styles.sortings()} >
+            <div style={styles.inline()} >
+                <p style={styles.textL()} >Sort by</p>
+                <p style={styles.authorName()} >Amount</p>
+            </div>
+            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_ASC)}>Amount, &#8593;</button>
+            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_DES)}>Amount, &#8595;</button>
+        </div>
     </div>;
 
     return <div style={styles.platform()}>
@@ -44,6 +55,7 @@ const Viewer = () => {
         {names == null && fetchState == enums.fetch.ERROR && <status.Error/>}
         {fetchState == enums.fetch.RUNNING && <status.Running/>}
         {fetchState == enums.fetch.DONE && names && names != null && <Sort/>}
+        {fetchState == enums.fetch.DONE && names && names != null && <CurrentSorting/>}
         {fetchState == enums.fetch.DONE && names && names != null && <List names={names} sorting={sorting}/>}
     </div>;
 };

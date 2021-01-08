@@ -3,6 +3,10 @@ const platform = () => {
     return {display: 'flex', flexDirection: 'column', alignItems: 'center', alignContent: 'center'};
 };
 
+const sortings = () => {
+    return {marginLeft: '1em', marginRight: '1em', display: 'flex', flexDirection: 'column', alignItems: 'center', alignContent: 'center'};
+};
+
 const inline = () => {
     return {display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center'};
 };
@@ -15,6 +19,10 @@ const appName = () => {
     return {fontSize: '3em', color: 'black'};
 };
 
+const personName = () => {
+    return {fontSize: '2.5em', color: 'black'};
+};
+
 const authorName = () => {
     return {fontSize: '1em', color: 'grey'};
 };
@@ -23,20 +31,24 @@ const text = () => {
     return {fontSize: '1em', color: 'black'};
 };
 
+const textL = () => {
+    return {fontSize: '1.5em', color: 'black'};
+};
+
 const success = () => {
-    return {fontSize: '1,5em', color: 'forestgreen'};
+    return {fontSize: '1em', color: 'forestgreen'};
 };
 
 const failure = () => {
-    return {fontSize: '1,5em', color: '#dc4233'};
+    return {fontSize: '1em', color: '#dc4233'};
 };
 
 const running = () => {
-    return {fontSize: '1,5em', color: 'darkblue'};
+    return {fontSize: '1em', color: 'darkblue'};
 };
 
 const selection = () => {
-    return {fontSize: '1,5em', color: '#dc4233'}
+    return {fontSize: '1.5em', color: '#dc4233'}
 };
 
 const sortingButton = () => {
@@ -48,5 +60,5 @@ const fetchingButton = () => {
 };
 
 export default {
-    appName, authorName, failure, fetchingButton, inline, platform, person, running, selection, sortingButton, success, text
+    appName, authorName, failure, fetchingButton, inline, platform, person, personName, running, selection, sortingButton, sortings, success, text, textL
 };
