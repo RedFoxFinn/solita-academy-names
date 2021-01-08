@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](///compare/v0.2.3...v0.3.0) (2021-01-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **list:** newly added and complete search functionality
+
+### Features
+
+* **list:** implemented amount searching with names 7bcef1e
+
 ### [0.2.3](///compare/v0.2.2...v0.2.3) (2021-01-08)
 
 
