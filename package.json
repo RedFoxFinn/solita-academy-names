@@ -44,7 +44,8 @@
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.7",
-    "standard-version": "^9.1.0"
+    "standard-version": "^9.1.0",
+    "uuid": "^8.3.2"
   },
   "husky": {
     "hooks": {
