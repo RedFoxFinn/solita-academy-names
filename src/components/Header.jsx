@@ -1,18 +1,22 @@
+
+// Author:      Antti Aarnio || RedFoxFinn
+// Project:     solita_academy_names
+// Description: Solita Dev Academy programming assignment prior to applying
+// File:        Header.jsx
+
+// imports
+
 import React from 'react';
 
 import styles from '../tools/styles';
 
-const Header = () => <div style={styles.inline()}>
-    <AppName/>
-    <Author/>
+// Defining the component
+
+const Header = (props) => <div id={props.id} style={styles.inline()}>
+    <p style={styles.appName()}>Names</p>
+    <p style={styles.authorName()}>by RedFoxFinn</p>
 </div>;
 
-const AppName = () => {
-    return <p style={styles.appName()}>Names</p>;
-};
-
-const Author = () => {
-    return <p style={styles.authorName()}>by RedFoxFinn</p>;
-};
+// Defining the component exporting
 
 export default Header;
