@@ -41,7 +41,7 @@ const List = (props) => {
     // or the status message if the search didn't find any matches.
 
     const Length = ({id}) => {
-        return <div id={id} style={styles.inline()}>
+        return <div id={id} data-testid={id} style={styles.inline()}>
             <p style={styles.success()}>Total amount of names: <strong>{names.length}</strong></p>
         </div>;
     };
@@ -51,7 +51,7 @@ const List = (props) => {
         names.forEach(name => {
             total += name.amount;
         });
-        return <div id={id} style={styles.inline()}>
+        return <div id={id} data-testid={id} style={styles.inline()}>
             <p style={styles.success()}>Total amount from names: <strong>{total}</strong></p>
         </div>;
     };
@@ -81,13 +81,13 @@ const List = (props) => {
 
         if (results) {
             return results.length > 0 
-                ? <ul id={`${props.id}-searchResults`} style={styles.platform()}>
+                ? <ul id={`${props.id}-searchResults`} data-testid={`${props.id}-searchResults`} style={styles.platform()}>
                     {results.map(person => <Person name={person.name} amount={person.amount} />)}
                 </ul> 
                 : <status.NoResults id={`${props.id}-noResults`}/>;
         } else {
             return (
-                <ul id={`${props.id}-namesList`} style={styles.platform()}>
+                <ul id={`${props.id}-namesList`} data-testid={`${props.id}-namesList`} style={styles.platform()}>
                     {names.map(person => <Person name={person.name} amount={person.amount} />)}
                 </ul>
             );
@@ -99,13 +99,13 @@ const List = (props) => {
 
     const handleSearch = () => {
         setResults([]);
-        const search = document.getElementById('sda-names-list-search-searchByName').value;
+        const search = document.getElementById(`${props.id}-search-searchByName`).value;
         const res = names.filter(person => person.name.toLowerCase().includes(search.toLowerCase()));
         setResults(res);
     };
 
     const resetSearch = () => {
-        document.getElementById('sda-names-list-search-searchByName').value = '';
+        document.getElementById(`${props.id}-search-searchByName`).value = '';
         setResults(null);
     };
 
@@ -114,24 +114,24 @@ const List = (props) => {
     //   Input is used for searching certain amounts, by name.
     //   searchAmounts-button executes the search. resetSearch-button resets the search.
 
-    const Search = ({id}) => <div id={id} style={styles.platform()} >
-        <div id={`${id}-header`} style={styles.inline()} >
+    const Search = ({id}) => <div id={id} data-testid={id} style={styles.platform()} >
+        <div id={`${id}-header`} data-testid={`${id}-header`} style={styles.inline()} >
             <p style={styles.textL()} >Search</p>
             <p style={styles.authorName()} >by name</p>
         </div>
-        <div id={`${id}-searchBar`} style={styles.inline()} >
-            <input id={`${id}-searchByName`} type='text' style={styles.searchField()} 
+        <div id={`${id}-searchBar`} data-testid={`${id}-searchBar`} style={styles.inline()} >
+            <input id={`${id}-searchByName`} data-testid={`${id}-searchByName`} type='text' style={styles.searchField()} 
                 placeholder='type name for search' />
-            <input id={`${id}-searchAmounts`} type='button' style={styles.searchButtons()} 
+            <input id={`${id}-searchAmounts`} data-testid={`${id}-searchAmounts`} type='button' style={styles.searchButtons()} 
                 value='search amounts' onClick={() => handleSearch()} />
-            <input id={`${id}-resetSearch`} type='button' style={styles.searchButtons()} 
+            <input id={`${id}-resetSearch`} data-testid={`${id}-resetSearch`} type='button' style={styles.searchButtons()} 
                 value='reset search' onClick={() => resetSearch()} />
         </div>
     </div>;
 
     //   Returned element for the rendering
 
-    return props.names && <div id={props.id} style={styles.platform()}>
+    return props.names && <div id={props.id} data-testid={props.id} style={styles.platform()}>
         <Length id={`${props.id}-datasetSize`} />
         <TotalAmount id={`${props.id}-totalAmount`} />
         <Search id={`${props.id}-search`} />
