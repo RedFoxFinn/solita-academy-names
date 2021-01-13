@@ -13,6 +13,8 @@ import fetchService from '../tools/fetchService';
 import enums from '../tools/enums';
 import List from './List';
 import status from './Status';
+import Sort from './Sort';
+import CurrentSorting from './CurrentSorting';
 
 //   Defining the component
 //   Viewer is responsible of returning for rendering all the other components other than the application header.
@@ -39,50 +41,22 @@ const Viewer = (props) => {
 
     //   Defining the subcomponents
     //   Fetch is the subcomponent that'll be used for fetching the data. It uses onFetch-function to do so.
-    //   CurrentSorting is the subcomponent that'll display the current sorting of name/amount-pairs 
-    // if the data has been fetched.
-    //   Sort is the subcomponent that'll display the sorting functionalities of the name/amount-pairs
-    // if the data has been fetched. Sort has four sorting options to use, two by name and two by amount.
-    // Name and amount options have both ascending and descending options.
 
-    const Fetch = ({id}) => <div id={id} style={styles.inline()}>
+    const Fetch = ({id}) => <div id={id} data-testid={id} style={styles.inline()}>
         <p style={styles.text()}>Fetch names?</p>
-        <button style={styles.fetchingButton()} onClick={() => onFetch()} >please do</button>
-    </div>;
-
-    const CurrentSorting = ({id}) => <div id={id} style={styles.inline()}>
-        <p style={styles.success()}>Current sorting: <strong>{sorting}</strong></p>
-    </div>;
-
-    const Sort = ({id}) => <div id={id} style={styles.inline()} >
-        <div style={styles.sortings()} >
-            <div style={styles.inline()} >
-                <p style={styles.textL()} >Sort</p>
-                <p style={styles.authorName()} >by name</p>
-            </div>
-            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AtoZ)}>Name, &#8593;</button>
-            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.ZtoA)}>Name, &#8595;</button>
-        </div>
-        <div style={styles.sortings()} >
-            <div style={styles.inline()} >
-                <p style={styles.textL()} >Sort</p>
-                <p style={styles.authorName()} >by amount</p>
-            </div>
-            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_ASC)}>Amount, &#8593;</button>
-            <button style={styles.sortingButton()} onClick={() => setSorting(enums.sorting.AMOUNT_DES)}>Amount, &#8595;</button>
-        </div>
+        <button id={`${id}-fetchButton`} data-testid={`${id}-fetchButton`} style={styles.fetchingButton()} onClick={() => onFetch()} >please do</button>
     </div>;
 
     //   Returned element for the rendering
 
-    return <div id={props.id} style={styles.platform()}>
-        <Fetch id='sda-names-fetch'/>
-        {names == null && fetchState === enums.fetch.STOPPED && <status.Nope id='sda-names-status-nope'/>}
-        {names == null && fetchState === enums.fetch.ERROR && <status.Error id='sda-names-status-err'/>}
-        {fetchState === enums.fetch.RUNNING && <status.Running id='sda-names-status-run'/>}
-        {fetchState === enums.fetch.DONE && names && names != null && <Sort id='sda-names-sorting-selector'/>}
-        {fetchState === enums.fetch.DONE && names && names != null && <CurrentSorting id='sda-names-sorting-current'/>}
-        {fetchState === enums.fetch.DONE && names && names != null && <List id='sda-names-list' names={names} sorting={sorting}/>}
+    return <div id={props.id} data-testid={props.id} style={styles.platform()}>
+        <Fetch id={`${props.id}-fetch`}/>
+        {names == null && fetchState === enums.fetch.RUNNING && <status.Running id={`${props.id}-status-run`}/>}
+        {names == null && fetchState === enums.fetch.STOPPED && <status.Nope id={`${props.id}-status-nope`}/>}
+        {names == null && fetchState === enums.fetch.ERROR && <status.Error id={`${props.id}-status-err`}/>}
+        {fetchState === enums.fetch.DONE && names && names != null && <Sort id={`${props.id}-sorting-selector`} setSorting={setSorting} />}
+        {fetchState === enums.fetch.DONE && names && names != null && <CurrentSorting id={`${props.id}-sorting-current`} sorting={sorting} />}
+        {fetchState === enums.fetch.DONE && names && names != null && <List id={`${props.id}-list`} names={names} sorting={sorting}/>}
     </div>;
 };
 

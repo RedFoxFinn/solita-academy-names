@@ -16,20 +16,20 @@ import styles from '../tools/styles';
 //   Running is the component that'll be shown if the data fetching is being executed.
 //   NoResults is the component thatäll be shown if the amount searching by the name doesn't find any matches.
 
-const Nope = (props) => <div id={props.id} style={{}}>
+const Nope = (props) => <div id={props.id} data-testid={props.id} style={{}}>
     <p style={styles.failure()}>You need to fetch the names . . .</p>
 </div>;
 
-const Error = (props) => <div id={props.id} style={styles.platform()}>
+const Error = (props) => <div id={props.id} data-testid={props.id} style={styles.platform()}>
     <p style={styles.failure()}>Error occured while fetching the names . . .</p>
     <p style={styles.failure()}>Please try again</p>
 </div>;
 
-const Running = (props) => <div id={props.id} style={{}}>
+const Running = (props) => <div id={props.id} data-testid={props.id} style={{}}>
     <p style={styles.running()}>Fetching the names . . .</p>
 </div>;
 
-const NoResults = (props) => <div id={props.id} style ={{}}>
+const NoResults = (props) => <div id={props.id} data-testid={props.id} style ={{}}>
     <p style={styles.failure()} >With name '{props.name}' we couldn't find any results</p>
 </div>;
 

@@ -5,7 +5,7 @@ import uuid from 'uuid';
 import App from '../App';
 import Header from './Header';
 
-describe('Header', () => {
+describe('Header unit tests', () => {
   const appId = uuid;
   beforeEach(() => render(<App id={appId}/>));
   test('Header renders', () => {

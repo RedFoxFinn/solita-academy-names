@@ -6,7 +6,7 @@ import uuid from 'uuid';
 import CurrentSorting from './CurrentSorting';
 import enums from '../tools/enums';
 
-describe('CurrentSorting', () => {
+describe('CurrentSorting unit tests', () => {
     const appId = uuid;
     test('CurrentSorting renders', () => {
         const currentSorting = render(<CurrentSorting id={`${appId}`} sorting={enums.sorting.AtoZ} />);

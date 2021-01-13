@@ -56,7 +56,7 @@ const List = (props) => {
         </div>;
     };
 
-    const Names = () => {
+    const Names = ({id}) => {
         switch (props.sorting) {
             case enums.sorting.AtoZ: {
                 orderByNameAscending();
@@ -79,19 +79,15 @@ const List = (props) => {
             }
         }
 
-        if (results) {
-            return results.length > 0 
-                ? <ul id={`${props.id}-searchResults`} data-testid={`${props.id}-searchResults`} style={styles.platform()}>
-                    {results.map(person => <Person name={person.name} amount={person.amount} />)}
-                </ul> 
-                : <status.NoResults id={`${props.id}-noResults`}/>;
-        } else {
-            return (
-                <ul id={`${props.id}-namesList`} data-testid={`${props.id}-namesList`} style={styles.platform()}>
-                    {names.map(person => <Person name={person.name} amount={person.amount} />)}
-                </ul>
-            );
-        }
+        return results 
+          ? results.length > 0 
+            ? <ul id={`${id}-search`} data-testid={`${id}-search`} style={styles.platform()} >
+                {results.map(person => <Person name={person.name} amount={person.amount} id={`${props.id}-person`} />)}
+            </ul> 
+            : <status.NoResults id={`${id}-noResults`}/>
+          : <ul id={`${id}-list`} data-testid={`${id}-list`} style={styles.platform()}>
+              {names.map(person => <Person name={person.name} amount={person.amount} id={`${props.id}-person`} />)}
+          </ul>;
     };
 
     //   Helper functions for searching amount from name/amount -pairs by the given string (name or part of a name)
@@ -135,7 +131,7 @@ const List = (props) => {
         <Length id={`${props.id}-datasetSize`} />
         <TotalAmount id={`${props.id}-totalAmount`} />
         <Search id={`${props.id}-search`} />
-        <Names />
+        <Names id={`${props.id}-nameList`} />
     </div>;
 };
 

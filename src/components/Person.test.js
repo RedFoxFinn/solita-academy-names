@@ -5,7 +5,7 @@ import uuid from 'uuid';
 
 import Person from './Person';
 
-describe('Person', () => {
+describe('Person unit tests', () => {
     const appId = uuid;
     const name = uuid;
     const amount = Math.random() * 100;

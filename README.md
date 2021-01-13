@@ -24,9 +24,9 @@ Search functionality displayed after the json gets fetched. Features search fiel
 
 List is displayed after the json gets fetched. By default it shows name/amount -pairs sorted by name, ascending. When search is used, there will be names that include search term (only some letters or complete name). If no results appear, there will be shown status message with reflecting content.
 
-### dev-academy-2021 exercise - Name Application 
+### [Original assignment from [Solita GitHub](https://github.com/solita/dev-academy-2020/)]
 
-[Original assignment from [Solita GitHub](https://github.com/solita/dev-academy-2020/)]
+#### dev-academy-2021 exercise - Name Application
 
 Your task is to implement a name application. The application should have an user interface. The user interface can be either a web application or an api. (It can even contain both if you have enough time and enthusiasm.) 
 

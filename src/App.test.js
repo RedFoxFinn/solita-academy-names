@@ -6,7 +6,7 @@ import App from './App';
 import Header from './components/Header';
 import Viewer from './components/Viewer';
 
-describe('App', () => {
+describe('App unit tests', () => {
   const appId = uuid;
   test('App renders', () => {
     const app = render(<App id={appId}/>);

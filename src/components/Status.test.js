@@ -5,7 +5,7 @@ import uuid from 'uuid';
 
 import status from './Status';
 
-describe('Status', () => {
+describe('Status unit tests', () => {
     const appId = uuid;
     test('status.Nope renders', () => {
         const nope = render(<status.Nope id={`${appId}`} />);

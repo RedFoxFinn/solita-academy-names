@@ -5,7 +5,7 @@ import uuid from 'uuid';
 
 import Sort from './Sort';
 
-describe('Sort', () => {
+describe('Sort unit tests', () => {
     const appId = uuid;
     test('Sort renders', () => {
         const sort = render(<Sort id={`${appId}`} setSorting={() => console.log('mock')} />);

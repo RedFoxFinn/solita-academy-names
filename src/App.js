@@ -15,9 +15,9 @@ import styles from './tools/styles';
 //   Defining the component
 //   App returns for rendering the complete application.
 
-const App = () => <div style={styles.platform()}>
-  <Header id='sda-names-header'/>
-  <Viewer id='sda-names-viewer'/>
+const App = (props) => <div id={props.id} data-testid={props.id} style={styles.platform()}>
+  <Header id={`${props.id}-header`}/>
+  <Viewer id={`${props.id}-viewer`}/>
 </div>;
 
 //   Defining the component exporting

@@ -5,7 +5,7 @@ import uuid from 'uuid';
 import App from '../App';
 import Viewer from './Viewer';
 
-describe('Viewer', () => {
+describe('Viewer unit tests', () => {
   const appId = uuid;
   beforeEach(() => render(<App id={appId}/>));
   test('Viewer renders', () => {
