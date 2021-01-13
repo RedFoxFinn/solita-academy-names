@@ -1,12 +1,12 @@
 {
   "name": "sda-back",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Programming assignment for Solita Dev Academy - backend",
   "main": "server.js",
   "author": "RedFoxFinn",
   "license": "MIT",
   "scripts": {
-    "start": "",
+    "start": "NODE_ENV=production node server.js",
     "cm": "git-cz",
     "release": "standard-version"
   },
