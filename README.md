@@ -3,6 +3,8 @@
 
 ## programming assignment - name application
 
+![CI Status](https://github.com/RedFoxFinn/solita-academy-names/workflows/Frontend-tests/badge.svg?branch=master)
+
 Programming assignment for applying to Solita Dev Academy 2021.
 
 I used javascript and following libraries to complete this assignment:
