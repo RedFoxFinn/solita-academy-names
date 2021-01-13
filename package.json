@@ -1,6 +1,6 @@
 {
   "name": "solita_academy_names",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -15,7 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose --transformIgnorePatterns 'node_modules/*'",
+    "ci-test": "react-scripts test --verbose --transformIgnorePatterns --detectOpenHandles 'node_modules/*'",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version"
