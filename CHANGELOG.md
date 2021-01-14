@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](///compare/v0.3.7...v0.3.8) (2021-01-14)
+
+
+### Bug Fixes
+
+* fixed ci-test -script on packege.json cc9b687
+
 ### [0.3.7](///compare/v0.3.6...v0.3.7) (2021-01-13)
 
 ### [0.3.6](///compare/v0.3.5...v0.3.6) (2021-01-13)
